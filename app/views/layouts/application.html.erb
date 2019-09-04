@@ -9,10 +9,22 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
 
   <body>
-    <%= yield %>
+    <div class="border-bottom">
+      <div class="container d-flex justify-content-between align-items-center my-3">
+        <p class="links"><%=link_to "Shaken, not stirred", cocktails_path %></p>
+        <p class="links"><%=link_to "Add a cocktail", new_cocktail_path %></p>
+      </div>
+    </div>
+    <div class="container">
+      <%= yield %>
+    </div>
     <%= javascript_include_tag "application" %> <!-- from app/assets/javascripts/application.js -->
     <%= javascript_pack_tag "application" %>    <!-- from app/javascript/packs/application.js -->
   </body>

@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-12">
+    <h1>All cocktails (<%= @cocktails.length %>)</h1>
+  </div>
+</div>
+<div class="cards-container">
+<div class="row">
+  <% @cocktails.each do |cocktail| %>
+    <div class="col-4">
+      <div class="flat-card">
+        <div class="flat-card-image" style="background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/tanbackground-1553877785.jpg?resize=480:*')"></div>
+        <div class="flat-card-content">
+          <!-- if statement & checkbox image -->
+        <div class="flat-card-title">
+          <h4><%= cocktail.name %></h4>
+        </div>
+        <div class="flat-card-actions">
+          <p><%=link_to "Fancy this one?", cocktail_path(cocktail) %></p>
+          <%=link_to edit_cocktail_path(cocktail) do %>
+            <i class="fa fa-pencil"></i>
+          <% end %>
+          <%= link_to cocktail_path(cocktail),
+            method: :delete,
+            data: { confirm: "Are you sure?" } do %>
+            <i class="fa fa-trash-o"></i>
+          <% end %>
+        </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+</div>
