@@ -8,7 +8,11 @@
   <% @cocktails.each do |cocktail| %>
     <div class="col-4 mb-4">
       <div class="flat-card">
-        <div class="flat-card-image" style="background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/tanbackground-1553877785.jpg?resize=480:*')"></div>
+        <% if cocktail.photo_url.present? %>
+          <div class="flat-card-image" style="background-image: url(<%= cocktail.photo_url %>)"></div>
+        <% else %>
+          <div class="flat-card-image" style="background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/tanbackground-1553877785.jpg?resize=480:*')"></div>
+        <% end %>
         <div class="flat-card-content">
           <!-- if statement & checkbox image -->
           <div class="pudding"></div>

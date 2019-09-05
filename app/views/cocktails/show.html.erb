@@ -1,4 +1,8 @@
-<div class="map" style="background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/tanbackground-1553877785.jpg?resize=480:*')"></div>
+<% if @cocktail.photo_url.present? %>
+  <div class="map" style="background-image: url(<%= @cocktail.photo_url %> )"></div>
+<% else %>
+    <div class="map" style="background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/tanbackground-1553877785.jpg?resize=480:*')"></div>
+<% end %>
 <div class="container margin-top-negative">
   <div class="row">
     <div class="col-8">
