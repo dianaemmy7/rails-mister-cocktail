@@ -16,10 +16,13 @@
   </head>
 
   <body>
-    <div class="border-bottom">
+    <div class="border-bottom mb-3">
       <div class="container d-flex justify-content-between align-items-center my-3">
-        <p class="links"><%=link_to "Shaken, not stirred", cocktails_path %></p>
-        <p class="links"><%=link_to "Add a cocktail", new_cocktail_path %></p>
+        <p class="nav-bar-headers"><%=link_to "Shaken, not stirred", root_path %></p>
+        <a class="navbar-brand" href="#">
+            <%= image_tag "james-bond-007.png", alt: "James bond", width: 80 %>
+        </a>
+        <p class="nav-bar-headers"><%=link_to "Add a cocktail", new_cocktail_path %></p>
       </div>
     </div>
     <div class="container">

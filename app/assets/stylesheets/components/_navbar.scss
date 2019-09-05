@@ -10,3 +10,14 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.nav-bar-headers a {
+  color: #A9A9A9;
+  font-size: 18px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 200;
+  &:hover {
+    color: black;
+    text-decoration: none;
+  }
+}

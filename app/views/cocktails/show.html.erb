@@ -10,14 +10,32 @@
         <h3>How to mix this...</h3>
         <ul>
         <% @cocktail.doses.each do |dose| %>
-          <li><%= dose.ingredient.name %>: <%= dose.description %></li>
+          <li><%= dose.ingredient.name %>: <%= dose.description %>
           <%= link_to dose_path(dose),
             method: :delete,
             data: { confirm: "Are you sure?" } do %>
-              <i class="fa fa-trash-o"></i>
+              <i class="fa fa-trash-o"></i></li>
             <% end %>
         <% end %>
         </ul>
+      </div>
+       <div class="flat-show-card">
+        <h3>What other drinkers say...</h3>
+        <% @cocktail.reviews.each do |review| %>
+          <div class="review-card">
+            <p class="mb-0 mt-2">
+              <% review.rating.times do %>
+                <i class="fas fa-star mine"></i>
+              <% end %>
+            </p>
+            <p><%= review.content %>
+            <%= link_to review_path(review),
+              method: :delete,
+              data: { confirm: "Are you sure?" } do %>
+                <i class="fa fa-trash-o"></i>
+              <% end %></p>
+            </div>
+        <% end %>
       </div>
     </div>
     <div class="col-4">
@@ -26,9 +44,19 @@
        <%= simple_form_for [@cocktail, @dose] do |f| %>
           <%= f.association :ingredient %>
           <%= f.input :description %>
-          <%= f.submit "Add a ingredient", class: "btn btn-primary" %>
+          <%= f.submit "Add a ingredient", class: "btn custom" %>
         <% end %>
       </div>
+      <div class="flat-show-card">
+        <h5>How did you like it?</h5>
+        <%= simple_form_for [@cocktail, @review] do |f| %>
+          <%= f.input :content %>
+          <%= f.input :rating %>
+          <%= f.submit "Add a review", class: "btn custom" %>
+        <% end %>
+      </div>
+    </div>
+
     </div>
   </div>
 </div>

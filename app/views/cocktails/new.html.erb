@@ -1,4 +1,8 @@
 <h1>Freshly poured cocktail</h1>
 <%= render 'form', cocktail: @cocktail %>
 
-<%=link_to "Back to all drinks", cocktails_path %>
+<p class="link-grey">
+  <%= link_to root_path do %>
+      Back to all <i class="fas fa-cocktail"></i>
+  <% end %>
+</p>

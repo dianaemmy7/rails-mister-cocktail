@@ -10,6 +10,7 @@ class CocktailsController < ApplicationController
 
   def show
     @dose = Dose.new
+    @review = Review.new
   end
 
   def create
@@ -39,7 +40,7 @@ class CocktailsController < ApplicationController
     @cocktail.destroy
 
     # no need for app/views/restaurants/destroy.html.erb
-    redirect_to cocktails_path
+    redirect_to root_path
   end
 
   # def self.get_photo_url
