@@ -6,7 +6,7 @@
 <div class="cards-container">
 <div class="row">
   <% @cocktails.each do |cocktail| %>
-    <div class="col-4 mb-4">
+    <div class="col-12 col-mb-4 col-lg-4 mb-4">
       <div class="flat-card">
         <% if cocktail.photo_url.present? %>
           <div class="flat-card-image" style="background-image: url(<%= cocktail.photo_url %>)"></div>

@@ -1,11 +1,11 @@
 <% if @cocktail.photo_url.present? %>
-  <div class="map" style="background-image: url(<%= @cocktail.photo_url %> )"></div>
+  <div class="map" style="background-image: url(<%= @cocktail.photo_url %>)"></div>
 <% else %>
     <div class="map" style="background-image: url('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/tanbackground-1553877785.jpg?resize=480:*')"></div>
 <% end %>
 <div class="container margin-top-negative">
   <div class="row">
-    <div class="col-8">
+    <div class="col-12 col-mb-8 col-lg-8">
       <div class="flat-show-card">
         <h1><%= @cocktail.name %></h1>
         <p class="flat-show-address"> This is Chuck Norris' favourite one.</p>
@@ -42,7 +42,7 @@
         <% end %>
       </div>
     </div>
-    <div class="col-4">
+    <div class="col-6 col-mb-4 col-lg-4">
       <div class="flat-show-card">
         <h5>Add ingredient</h5>
        <%= simple_form_for [@cocktail, @dose] do |f| %>
